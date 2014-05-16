@@ -1,0 +1,141 @@
+html,
+body{
+    font-family: arial, helvetica, sans-serif;
+    font-size: 100%;
+}
+
+*{
+    -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
+    font-size: 1em;
+}
+
+.module{
+    width: 700px;
+
+}
+
+nav{
+    background: #3A4348;
+    height: 50px;
+}
+
+nav ul{
+    margin:0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+nav ul li{
+    display: table-cell;
+    width: 16.1%;
+    vertical-align: middle;
+    text-align: center;
+    border-right: 1px solid #ffffff;
+    color:#ffffff;
+    cursor: pointer;
+    padding: 0 2px;
+}
+
+.selected, nav ul li:hover{
+    background: #68CBD9;
+}
+
+nav ul li:last-child{
+    border-right: 0 none;
+}
+
+section{
+    clear: both;
+}
+
+section .image{
+    width: 435px;
+    height: 450px;
+    float: left;
+}
+
+section .description{
+    float: right;
+    height: 450px;
+    width: 265px;
+    background: #dcdcdc;
+    color:#333333;
+}
+
+section .description p{
+    margin: 10px;
+    font-size: 14px;
+}
+
+section .description table{
+    width: 100%;
+    border-top:1px solid #333333;
+    border-bottom:1px solid #333333;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+section .description table tr td{
+    width: 50%;
+    height: 35px;
+    border-bottom: 1px solid#333333;
+    font-size:12px;
+    text-align: center;
+    position: relative;
+    padding: 0 10px 0 40px;
+}
+
+section .description table tr td:nth-last-child(odd){
+    border-left: 1px solid #333333;
+}
+
+section .description dl{
+    margin: 10px 10px 0;
+    font-size: 11px;
+}
+
+section .description dl dt{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+section .description dl dt dfn{
+    font-weight: normal;
+    font-size: 9px;
+}
+
+section .description dl dd{
+    margin: 0 0 10px;
+}
+
+section .description dl dd:last-child{
+    margin: 0 0 2px;
+}
+
+section a{
+    font-size: 12px;
+    margin:0 10px;
+    color: #000;
+}
+
+.bath:before{content:' ';display: block;height: 25px;width:28px;background:url('img/shower.png');top: 5px; left: 5px; position: absolute;}
+.nurse:before{content:' ';display: block;height: 25px;width:25px;background:url('img/nurse.png');top: 5px; left: 5px; position: absolute;}
+.tea:before{content:' ';display: block;height: 25px;width:19px;background:url('img/tea.png');top: 5px; left: 5px; position: absolute;}
+.night-s:before{content:' ';display: block;height: 25px;width:37px;background:url('img/life.png');top: 5px; left: 5px; position: absolute;}
+.tv:before{content:' ';display: block;height: 25px;width:29px;background:url('img/tv.png');top: 5px; left: 5px; position: absolute;}
+.wifi:before{content:' ';display: block;height: 25px;width:25px;background:url('img/wifi.png');top: 5px; left: 5px; position: absolute;}
+.tel:before{content:' ';display: block;height: 25px;width:25px;background:url('img/phone.png');top: 5px; left: 5px; position: absolute;}
+.door:before{content:' ';display: block;height: 25px;width:17px;background:url('img/door.png');top: 5px; left: 5px; position: absolute;}
+.kitch:before{content:' ';display: block;height: 25px;width:25px;background:url('img/kitchen.png');top: 5px; left: 5px; position: absolute;}
+.lift:before{content:' ';display: block;height: 25px;width:24px;background:url('img/lift.png');top: 5px; left: 5px; position: absolute;}
+.internet:before{content:' ';display: block;height: 25px;width:25px;background:url('img/internet.png');top: 5px; left: 5px; position: absolute;}
+
+
+#det_room1 .image{background-image: url('img/hostel.jpg');}
+#det_room2 .image{background-image: url('img/lstudio.jpg');background-position: -100px 0;}
+#det_room3 .image{background-image: url('img/nstudio.jpg');background-position: -100px 0;}
+#det_room4 .image{background-image: url('img/seconf.jpg');background-position: -200px 0;}
+#det_room5 .image{background-image: url('img/firstf.jpg');background-position: -50px 0;}
+#det_room6 .image{background-image: url('img/dementia.jpg');background-position: -100px 0;}
