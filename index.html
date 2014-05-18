@@ -249,16 +249,14 @@
 <section ng-app="angularjs">
 <div ng-controller="MainCtrl">
 
-    <select ng-model="selectedItem" ng-options="item as item.name for item in items" ng-init="selectedItem = items[0]"></select>
+    <select ng-model="selectedItem" ng-options="item as item.name for item in items" ng-init="selectedItem = items[0]" data-ng-change="slide = 0"></select>
 
-    0  <input type="range" ng-model="value" min="0" max="{{selectedItem.value}}" value="0"> {{selectedItem.value}}
+    0  <input type="range" ng-model="slide" min="0" max="{{selectedItem.value}}" value="0" /> {{selectedItem.value}}
      <br />
 
-    <span ng-model="percentage">{{value*6.59/100 | isempty: 0}}</span>
 
-
-    {{value | isempty: 0}} x 6.59%<br/>
-    __________________&nbsp;&nbsp;&nbsp;= ${{value*percentage/365}}<br/>
+    {{slide | isempty: 0}} x 6.59%<br/>
+    __________________&nbsp;&nbsp;&nbsp;= ${{slide*0.0659/365 | isempty: 0 | number:2}}<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;365
 
 

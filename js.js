@@ -20,7 +20,6 @@ app.controller('MainCtrl', function($scope) {
         { name: 'Dementia Care Unit',value: '350000'}];
 
     $scope.Math = window.Math;
-
 });
 
 app.filter('isempty', function() {
