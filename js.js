@@ -20,9 +20,11 @@ app.controller('MainCtrl', function($scope) {
         { name: 'Dementia Care Unit',value: '350000'}];
 
     $scope.Math = window.Math;
+    $scope.ShowFlag = false;
 
     var appo = 0;
     var controls = 320000;
+
 
 
     $scope.reset = function (){
@@ -31,19 +33,25 @@ app.controller('MainCtrl', function($scope) {
         $scope.appo=0;
         $scope.slide=0;
         if ($scope.selectedItem != undefined){
-            $scope.controls = $scope.selectedItem.value;
+            controls = $scope.selectedItem.value;
         }
+        $scope.ShowFlag = false;
     };
 
-    $('#sliders , #valoreinput').change(function(){
-        console.log("slide: " + $scope.slide);
-        console.log("appo: " + $scope.appo);
-        console.log("controls: " + $scope.controls);
-    });
+        $scope.Showerror = function (){
+            if(parseInt($scope.appo, 10) > parseInt(controls, 10)){
+                $scope.ShowFlag = true;
+            } else {
+                $scope.ShowFlag = false;
+            }
+        };
 
-    $scope.reset()
-
+    $scope.reset();
+    $scope.Showerror();
 });
+
+
+
 
 app.filter('isempty', function() {
     return function(input, replaceText) {

@@ -252,7 +252,7 @@
         <span>Room Type:&nbsp;&nbsp;&nbsp;<select ng-model="selectedItem" ng-options="item as item.name for item in items" ng-init="selectedItem = items[0]" data-ng-change="reset()" ></select></span>
 
         <div id="slider">
-            <b class="zero">0</b> <input id="sliders" class="bar" type="range" ng-model="slide" min="0" max="{{selectedItem.value}}" value="0" data-ng-change="appo = slide" /> <b class="valor">{{selectedItem.value}}</b>
+            <b class="zero">0</b> <input id="sliders" class="bar" type="range" ng-model="slide" min="0" max="{{selectedItem.value}}" value="0" data-ng-change="appo = slide; Showerror()" /> <b class="valor">{{selectedItem.value}}</b>
             <span class="highlight"></span>
         </div>
 
@@ -260,17 +260,17 @@
         <table>
             <tr>
                 <td style="width: 140px;border-bottom: 3px solid #000000;"><input type="text" restrict="[^0-9\-\s]" id="valoreinput" maxlength="6" ng-model="appo"
-                                                                                  value="{{slide | isempty: 0}}" ng-init="appo = 0" data-ng-change="slide = appo"/></td>
+                                                                                  value="{{slide | isempty: 0}}" ng-init="appo = 0" data-ng-change="slide = appo; Showerror()"/></td>
                 <td style="border-bottom: 3px solid #000000">x</td>
                 <td style="border-bottom: 3px solid #000000">6.59%</td>
                 <td rowspan="2">=</td>
-                <td rowspan="2" style="width: 130px;"><span ng-hide="appo > controls">${{slide*0.0659/365 | isempty: 0 | number:2}}</span><span class="calc-error" ng-show="appo > controls">Error</span></td>
+                <td rowspan="2" style="width: 130px;"><span ng-hide="ShowFlag">${{slide*0.0659/365 | isempty: 0 | number:2}}</span><span class="calc-error" ng-show="ShowFlag">Error</span></td>
             </tr>
             <tr>
                 <td colspan="3">365</td>
             </tr>
         </table>
-        <span class="error" ng-show="appo > controls">
+        <span class="error" ng-show="ShowFlag">
             The value exceed the maximum cap for this room.
         </span>
     </div>
