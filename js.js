@@ -20,6 +20,29 @@ app.controller('MainCtrl', function($scope) {
         { name: 'Dementia Care Unit',value: '350000'}];
 
     $scope.Math = window.Math;
+
+    var appo = 0;
+    var controls = 320000;
+
+
+    $scope.reset = function (){
+        $('#valoreinput').val('0');
+        $('#sliders').val('0');
+        $scope.appo=0;
+        $scope.slide=0;
+        if ($scope.selectedItem != undefined){
+            $scope.controls = $scope.selectedItem.value;
+        }
+    };
+
+    $('#sliders , #valoreinput').change(function(){
+        console.log("slide: " + $scope.slide);
+        console.log("appo: " + $scope.appo);
+        console.log("controls: " + $scope.controls);
+    });
+
+    $scope.reset()
+
 });
 
 app.filter('isempty', function() {
@@ -27,4 +50,30 @@ app.filter('isempty', function() {
         if(input) return input;
         return replaceText;
     }
+});
+
+app.directive('restrict', function($parse) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function(scope, iElement, iAttrs, controller) {
+            scope.$watch(iAttrs.ngModel, function(value) {
+                if (!value) {
+                    return;
+                }
+                $parse(iAttrs.ngModel).assign(scope, value.toLowerCase().replace(new RegExp(iAttrs.restrict, 'g'), '').replace(/\s+/g, '-'));
+            });
+        }
+    }
+});
+
+$('#valoreinput').each(function() {
+
+    $(this).blur(function(){
+        if(this.value == '') {
+            this.value = 0;
+            $('#sliders').val(0);
+        }
+    });
+
 });

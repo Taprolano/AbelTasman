@@ -249,33 +249,101 @@
 <section ng-app="angularjs" class="calculator">
     <div ng-controller="MainCtrl">
 
-        <span>Room Type:&nbsp;&nbsp;&nbsp;<select ng-model="selectedItem" ng-options="item as item.name for item in items" ng-init="selectedItem = items[0]" data-ng-change="slide = 0"></select></span>
+        <span>Room Type:&nbsp;&nbsp;&nbsp;<select ng-model="selectedItem" ng-options="item as item.name for item in items" ng-init="selectedItem = items[0]" data-ng-change="reset()" ></select></span>
 
         <div id="slider">
-            <b class="zero">0</b> <input id="sliders" class="bar" type="range" ng-model="slide" min="0" max="{{selectedItem.value}}" value="0" data-ng-change="inputnumb = sliders" /> <b class="valor">{{selectedItem.value}}</b>
+            <b class="zero">0</b> <input id="sliders" class="bar" type="range" ng-model="slide" min="0" max="{{selectedItem.value}}" value="0" data-ng-change="appo = slide" /> <b class="valor">{{selectedItem.value}}</b>
             <span class="highlight"></span>
         </div>
 
 
         <table>
             <tr>
-                <td style="width: 140px;border-bottom: 3px solid #000000;"><input type="text" pattern="\d*" id="valoreinput" maxlength="6" ng-model="inputnumb" max="{{selectedItem.value}}"
-                                                                                  value="{{slide | isempty: 0}}" data-ng-change="appo = inputnumb"/></td>
+                <td style="width: 140px;border-bottom: 3px solid #000000;"><input type="text" restrict="[^0-9\-\s]" id="valoreinput" maxlength="6" ng-model="appo"
+                                                                                  value="{{slide | isempty: 0}}" ng-init="appo = 0" data-ng-change="slide = appo"/></td>
                 <td style="border-bottom: 3px solid #000000">x</td>
                 <td style="border-bottom: 3px solid #000000">6.59%</td>
                 <td rowspan="2">=</td>
-                <td rowspan="2" style="width: 130px;">${{slide*0.0659/365 | isempty: 0 | number:2}}</td>
+                <td rowspan="2" style="width: 130px;"><span ng-hide="appo > controls">${{slide*0.0659/365 | isempty: 0 | number:2}}</span><span class="calc-error" ng-show="appo > controls">Error</span></td>
             </tr>
             <tr>
                 <td colspan="3">365</td>
             </tr>
         </table>
-
+        <span class="error" ng-show="appo > controls">
+            The value exceed the maximum cap for this room.
+        </span>
     </div>
 </section>
 
+<br style="clear: both" /><br /><br /><br /><br /><br />
+
+<table class="compare-table">
+    <tr>
+        <th class="empty"></th>
+        <th>Hostel Care Unit</th>
+        <th>Large Hostel Care Unit</th>
+        <th>Studio Care Unit</th>
+        <th>2 Bedroom Unit<br />Level One</th>
+        <th>2 Bedroom Unit<br />Ground Floor</th>
+        <th>Dementia Care Unit</th>
+    </tr>
+    <tr>
+        <td class="category">Maximum Refundable Accommodation Deposit (RAD)</td>
+        <td>$320,000</td>
+        <td>$375,000</td>
+        <td>$350,000</td>
+        <td>Singles<br />$400,000<br />Couples<br />$450,000</td>
+        <td>Singles<br />$425,000<br />Couples<br />$540,000</td>
+        <td>$350,000</td>
+    </tr>
+    <tr>
+        <td class="category">Size</td>
+        <td>24 m<sup>2</sup></td>
+        <td>30 m<sup>2</sup></td>
+        <td>27.5 m<sup>2</sup></td>
+        <td>58 m<sup>2</sup></td>
+        <td>55 m<sup>2</sup></td>
+        <td>24 m<sup>2</sup></td>
+    </tr>
+    <tr>
+        <td class="category">Description</td>
+        <td>Private studio unit with garden setting and ensuite.
+            Front and rear access, telephone and nurse call system.
+        </td>
+        <td>Private unit in garden setting with separate lounge and bedroom with ensuite.
+            Front and rear access, telephone and nurse call system.
+        </td>
+        <td>NEW larger studio unit with generous ensuite plus TV and Internet installed.
+            Private outdoor setting and large adjoining shared space with dining facilities.
+            Front and rear access, telephone and nurse call systems.
+        </td>
+        <td>Upstairs two bedroom unit for couples or singles with lounge, laundry, kitchenette and private balcony.
+            Stair lift access, telephone and nurse call system.
+        </td>
+        <td>Ground floor two bedroom unit for couples or singles with lounge, laundry, kitchenette and ensuite.
+            Private outdoor setting and plentiful adjoining shared space with dining facilities.
+            Ground level front and rear access, telephone and nurse call system.
+        </td>
+        <td>Private and secure unit with ensuite and interconnected lounge area in garden setting.
+            With nurse call system.
+        </td>
+    </tr>
+    <tr>
+        <td class="category">Number of units onsite</td>
+        <td>23</td>
+        <td>6</td>
+        <td>6</td>
+        <td>6</td>
+        <td>15</td>
+        <td>10</td>
+    </tr>
 
 
+
+
+
+</table>
 
 
 

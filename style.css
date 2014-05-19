@@ -149,20 +149,19 @@ section a{
     display: block;
     margin: 0 auto;
     border-radius: 10px;
-    background: #dcdcdc;
     padding: 10px;
-    width: 50%;
+    color: #333333;
+    width: 600px;
 }
 
 .calculator span{
     display: block;
     margin: 0 auto;
-    width: 50%;
     text-align: center;
 }
 
 .calculator select{
-    background: #dcdcdc;
+    background: #ffffff;
     padding: 10px;
     border: 0 none;
     font-weight: bold;
@@ -219,16 +218,25 @@ section a{
     background: rgba(255, 255, 255, 0.25);
 }
 
-input[type="range"] {
+#slider input[type="range"] {
     -webkit-appearance: none;
     background-color: black;
     height: 2px;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+.calculator input[type="text"] {
+    background: #ffffff;
+    border: 0 none;
+    font-weight: bold;
+    border-bottom: 2px dashed #333333;
+    outline: none;
+    text-align: center;
+}
+
+#slider input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     position: relative;
-    top: 0px;
+    top: -2px;
     z-index: 1;
     width: 11px;
     height: 11px;
@@ -258,7 +266,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 
 .calculator table {
-    margin: 0 270px;
+    margin: 0 75px;
     width: 50%;
     text-align: center;
     font-size: 18px;
@@ -268,4 +276,91 @@ input[type="range"]::-webkit-slider-thumb {
 
 .calculator table tr td{
     padding: 10px;
+}
+
+.calculator table tr td span{
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    font-size: 24px;
+    text-align: center;
+}
+
+.error{
+    background: red;
+    border-radius: 40px;
+    padding: 5px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.calc-error{
+    color:red;
+}
+
+/* table */
+
+
+.compare-table{
+    margin: 0 auto;
+    width: 700px;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #6f6f6d;
+    font-size: 14px;
+    border-
+}
+
+.compare-table tr:last-child{
+    border-bottom:2px solid #333333;
+}
+
+
+.compare-table tr:nth-child(4){
+    vertical-align: top;
+}
+
+.compare-table td{
+    background: #f7f7f7;
+    border:1px solid #dedede;
+    padding: 10px;
+    width: 100px;
+}
+
+.compare-table td:hover{
+    background: #ffffff;
+    color:#000000;
+}
+
+.compare-table td.category{
+    background: #eeeeee;
+    border-left:1px solid #cccccc;
+}
+
+.compare-table td.category:hover{
+    background: #ffffff;
+}
+
+.compare-table td:last-child{
+    border-right:1px solid #cccccc;
+}
+
+.compare-table th{
+    background: #333333;
+    color:#ffffff;
+    border:1px solid #333333;
+    width: 100px;
+    padding: 5px;
+}
+.compare-table th:hover{
+    background: #3F3F3F;
+}
+
+.compare-table th.empty{
+    background: #ffffff;
+    color:#ffffff;
+    border:1px solid #ffffff;
+    border-bottom: 1px solid #cccccc;
 }
