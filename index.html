@@ -246,24 +246,32 @@
 
 <br style="clear: both" /><br /><br /><br /><br /><br />
 
-<section ng-app="angularjs">
-<div ng-controller="MainCtrl">
+<section ng-app="angularjs" class="calculator">
+    <div ng-controller="MainCtrl">
 
-    <select ng-model="selectedItem" ng-options="item as item.name for item in items" ng-init="selectedItem = items[0]" data-ng-change="slide = 0"></select>
+        <span>Room Type:&nbsp;&nbsp;&nbsp;<select ng-model="selectedItem" ng-options="item as item.name for item in items" ng-init="selectedItem = items[0]" data-ng-change="slide = 0"></select></span>
 
-    0  <input type="range" ng-model="slide" min="0" max="{{selectedItem.value}}" value="0" /> {{selectedItem.value}}
-     <br />
-
-
-    {{slide | isempty: 0}} x 6.59%<br/>
-    __________________&nbsp;&nbsp;&nbsp;= ${{slide*0.0659/365 | isempty: 0 | number:2}}<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;365
+        <div id="slider">
+            <b class="zero">0</b> <input id="sliders" class="bar" type="range" ng-model="slide" min="0" max="{{selectedItem.value}}" value="0" data-ng-change="inputnumb = sliders" /> <b class="valor">{{selectedItem.value}}</b>
+            <span class="highlight"></span>
+        </div>
 
 
+        <table>
+            <tr>
+                <td style="width: 140px;border-bottom: 3px solid #000000;"><input type="text" pattern="\d*" id="valoreinput" maxlength="6" ng-model="inputnumb" max="{{selectedItem.value}}"
+                                                                                  value="{{slide | isempty: 0}}" data-ng-change="appo = inputnumb"/></td>
+                <td style="border-bottom: 3px solid #000000">x</td>
+                <td style="border-bottom: 3px solid #000000">6.59%</td>
+                <td rowspan="2">=</td>
+                <td rowspan="2" style="width: 130px;">${{slide*0.0659/365 | isempty: 0 | number:2}}</td>
+            </tr>
+            <tr>
+                <td colspan="3">365</td>
+            </tr>
+        </table>
 
-
-
-</div>
+    </div>
 </section>
 
 

@@ -139,3 +139,133 @@ section a{
 #det_room4 .image{background-image: url('img/seconf.jpg');background-position: -200px 0;}
 #det_room5 .image{background-image: url('img/firstf.jpg');background-position: -50px 0;}
 #det_room6 .image{background-image: url('img/dementia.jpg');background-position: -100px 0;}
+
+
+
+/* calculator */
+
+
+.calculator{
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: #dcdcdc;
+    padding: 10px;
+    width: 50%;
+}
+
+.calculator span{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+.calculator select{
+    background: #dcdcdc;
+    padding: 10px;
+    border: 0 none;
+    font-weight: bold;
+    border-bottom: 2px solid #000000;
+    outline: none;
+}
+
+
+#slider {
+    width: 400px;
+    height: 17px;
+    position: relative;
+    margin: 50px auto;
+    background: #333333 ;
+
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+
+}
+
+#slider .bar {
+    width: 388px;
+    height: 5px;
+    background: #333;
+    position: relative;
+    top: -4px;
+    left: 4px;
+
+    background: -moz-linear-gradient(left, #444444 0%, #555555 50%, #555555 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#444444), color-stop(50%,#555555), color-stop(100%,#555555));
+    background: -webkit-linear-gradient(left, #444444 0%,#555555 50%,#555555 100%);
+    background: -o-linear-gradient(left, #444444 0%,#555555 50%,#555555 100%);
+    background: -ms-linear-gradient(left, #444444 0%,#555555 50%,#555555 100%);
+    background: linear-gradient(left, rgba(68, 68, 68, 0.68) 0%,#555555 50%,#555555 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#555555',GradientType=1 );
+
+    -webkit-border-radius:40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+}
+
+#slider .highlight {
+    height: 2px;
+    position: absolute;
+    width: 388px;
+    top: 6px;
+    left: 6px;
+
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    background-color: black;
+    height: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    top: 0px;
+    z-index: 1;
+    width: 11px;
+    height: 11px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.6);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(50%,#abd3ee), color-stop(51%,#89c3eb), color-stop(100%,#d5ebfb));
+}
+
+.zero{
+    font-size: 20px;
+    left: -30px;
+    position: absolute;
+    top: -3px;
+}
+
+.valor{
+    font-size: 20px;
+    right: -80px;
+    position: absolute;
+    top: -3px;
+}
+
+
+.calculator table {
+    margin: 0 270px;
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.calculator table tr td{
+    padding: 10px;
+}
